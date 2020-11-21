@@ -3,7 +3,7 @@ short counter = 1;
 void determinLight(short pinNumber, short mask);
 short calculateMask(short pinNumber);
 
-void setup()
+void start()
 {
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
@@ -11,7 +11,7 @@ void setup()
   pinMode(5, OUTPUT);
 }
 
-void loop()
+void update()
 {
   for (int i = 2; i < 6; i++)
   {

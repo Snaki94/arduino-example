@@ -1,9 +1,9 @@
-void setup()
+void start()
 {
 	pinMode(13, OUTPUT);
 }
 
-void loop()
+void update()
 {
     digitalWrite(13, HIGH);
     delay(1000);

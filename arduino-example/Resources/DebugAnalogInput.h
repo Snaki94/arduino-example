@@ -2,14 +2,14 @@ int readPin = A0;
 int Pin9 = 9;
 int outVoltage;
 
-void setup()
+void start()
 {
   pinMode(readPin, INPUT);
   pinMode(Pin9, OUTPUT);
   Serial.begin(9600);
 }
 
-void loop()
+void update()
 {
   digitalWrite(Pin9, HIGH);
   outVoltage = analogRead(readPin);
