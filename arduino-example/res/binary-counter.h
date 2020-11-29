@@ -1,27 +1,33 @@
-short counter = 1;
+char counter = 1;
 
-void determinLight(short pinNumber, short mask);
-short calculateMask(short pinNumber);
+const int DELAY_TIME = 500;
+const char LED_PIN_01 = 1;
+const char LED_PIN_02 = 2;
+const char LED_PIN_03 = 3;
+const char LED_PIN_04 = 4;
+
+void determinLight(char pinNumber, char mask);
+char calculateMask(char pinNumber);
 
 void start()
 {
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
+  pinMode(LED_PIN_01, OUTPUT);
+  pinMode(LED_PIN_02, OUTPUT);
+  pinMode(LED_PIN_03, OUTPUT);
+  pinMode(LED_PIN_04, OUTPUT);
 }
 
 void update()
 {
-  for (int i = 2; i < 6; i++)
+  for (int i = 1; i < 5; i++)
   {
     determinLight(i, calculateMask(i));
   }
-  delay(500);
+  delay(DELAY_TIME);
   counter++;
 }
 
-void determinLight(short pinNumber, short mask)
+void determinLight(char pinNumber, char mask)
 {
   if (counter & mask)
   {
@@ -33,7 +39,7 @@ void determinLight(short pinNumber, short mask)
   }
 }
 
-short calculateMask(short pinNumber)
+char calculateMask(char pinNumber)
 {
-  return 1 << (pinNumber - 2);
+  return 1 << (pinNumber - 1);
 }

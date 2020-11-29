@@ -1,4 +1,4 @@
-#include "res/simple-diode.h"
+#include "res/serial-input.h"
 
 void setup()
 {
